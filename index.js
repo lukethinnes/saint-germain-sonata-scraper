@@ -5,8 +5,6 @@ const puppeteer = require('puppeteer');
   const page = await browser.newPage();
   await page.goto('https://en.wikipedia.org/wiki/Count_of_St._Germain');
   await page.screenshot({path: 'wiki.png'});
-  //await browser.waitForTarget(() => false)
-  //
   const result = await page.evaluate(() => {
     let headers = document.querySelectorAll('li');
     const headerArray = [...headers];
